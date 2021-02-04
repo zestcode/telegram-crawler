@@ -39,15 +39,16 @@ def fetch_one_message(msg):
         # Whether you were mentioned in this message or not. Note that replies to your own messages also count as mentions
         "message": msg.message,  # message content
         "date": msg.date,
-        "from_id": msg.from_id,  # The ID of the user who sent this message
+        "from_id": msg.from_id,# The ID of the user who sent this message
         "is_reply": msg.is_reply,  # True if the message is a reply to some other
         "reply_to_msg_id": msg.reply_to_msg_id,  # The ID to which this message is replying to, if any
         "is_channel": msg.is_channel,
         "is_group": msg.is_group,
         "media_file": media_file
     }
-
-    print("(DEBUG) GET MESSAGE: ", item)
+    item.from_id=(msg.from_id.user_id if msg.from_id else -1)
+    #this is exp from_id=NULL
+    #print("(DEBUG) GET MESSAGE: ", item)
 
     pipelines.process_message(item)
 
@@ -75,7 +76,7 @@ def fetch_channel(entity, is_group):
         "username": entity.username,
         "is_group": is_group
     }
-    print("(DEBUG) GET CHANNEL: ", item)
+    #print("(DEBUG) GET CHANNEL: ", item)
     pipelines.process_channel(item)
 
 
