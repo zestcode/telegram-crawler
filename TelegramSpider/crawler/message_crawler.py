@@ -15,7 +15,7 @@ def fetch_one_message(msg):
     :param msg:
     :return:
     """
-
+    #即将添加收取最新消息
     if msg.media and isinstance(msg.media, telethon.tl.types.MessageMediaPhoto):
         # Download image
         media_path = msg.download_media('media/group_{}/{}_{}_{}'.format(msg.chat.id, msg.chat.id, msg.from_id, msg.id))
