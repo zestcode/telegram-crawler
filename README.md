@@ -13,6 +13,7 @@ https://docs.telethon.dev/en/latest/quick-references/client-reference.html
 Execute `telegram.sql`
 数据表格式
 MySQL [telegram]> desc message;
+```mysql
 +-----------------+--------------+------+-----+---------+----------------+
 | Field           | Type         | Null | Key | Default | Extra          |
 +-----------------+--------------+------+-----+---------+----------------+
@@ -29,6 +30,7 @@ MySQL [telegram]> desc message;
 | media_file      | varchar(255) | YES  |     | NULL    |                |
 +-----------------+--------------+------+-----+---------+----------------+
 
+```
 ## 1.2. Create your Telegram apps
 
 URL：https://my.telegram.org/
