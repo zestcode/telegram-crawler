@@ -30,7 +30,7 @@ def fetch_one_message(msg):
         if not msg.message:
             return
 
-    item = {
+   item = {
         "message_id": msg.id,  # Message id of current chat
         "chat_id": msg.chat.id,  # ID of current chat
         ## "is_out": msg.out,
@@ -46,7 +46,7 @@ def fetch_one_message(msg):
         "is_group": msg.is_group,
         "media_file": media_file
     }
-    item.from_id=(msg.from_id.user_id if msg.from_id else -1)
+    item["from_id"]=(msg.from_id.user_id if msg.from_id else 0)
     #this is exp from_id=NULL
     #print("(DEBUG) GET MESSAGE: ", item)
 
